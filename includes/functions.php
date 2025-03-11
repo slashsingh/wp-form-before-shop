@@ -8,6 +8,7 @@ function wcfbo_render_form_fields()
             $required = $field['required'] ? 'required' : '';
             $placeholder = !empty($field['placeholder']) ? 'placeholder="' . esc_attr($field['placeholder']) . '"' : '';
 
+            echo '<div class="form-group">';
             switch ($field['type']) {
                 case 'text':
                     echo '<label>' . esc_html($field['label']) . ': <input type="text" name="' . esc_attr($field['label']) . '" ' . $placeholder . ' ' . $required . '></label>';
@@ -33,6 +34,7 @@ function wcfbo_render_form_fields()
                     echo '</label>';
                     break;
             }
+            echo '</div>';
         }
     }
 }
